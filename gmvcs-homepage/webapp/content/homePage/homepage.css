@@ -1,0 +1,286 @@
+*{
+	padding:0;
+	margin:0;
+	border: 0;
+	outline: 0;
+	font-family: "microsoft yahei", sans-serif;
+}
+
+html{
+	width: 100%;height: 100%;
+}
+body{
+	width: 100%;height: 100%;
+	min-width: 1170px;min-height: 750px;
+	background-color: #076FCB;
+	background-image: url(./images/bg.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+a{
+	color: white;
+	text-decoration: none;
+}
+a:hover{
+	color: #efba1e;
+}
+img{
+	border-style:none;
+}
+
+.wrapper{
+	width: 1170px;height: 750px;
+	margin: 0 auto;
+}
+
+.header{
+	height: 140px;
+	padding-top: 38px;
+}
+.header > h1{
+	display: inline-block;
+	line-height: 70px;
+	vertical-align: top;
+	color: white;
+	font-size: 40px;
+}
+.header > .loginfo{
+	float: right;
+	color: white;
+	position: relative;
+}
+.header > .loginfo > img, .header > .loginfo > label{
+	line-height: 40px;
+	vertical-align: middle;
+}
+.header > .loginfo > .userTip{
+	display: none;
+	position: absolute;
+	right: 0;
+	border: 1px solid white;
+	padding: 5px;
+	background-color: white;
+}
+.header > .loginfo > .userTip::before{
+	content: " ";
+    z-index: -1;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-width: 0px 12px 10px;
+    border-style: solid;
+    border-color: transparent transparent white;
+}
+.header > .loginfo > .userTip a{
+	display: block;
+	color: black;
+	text-decoration: none;
+	font-size: 14px;
+}
+.header > .loginfo > .userTip a:hover{
+	color:#076FCB;
+}
+.header > .loginfo:hover > .userTip{
+	display: block;
+}
+
+.content{
+	
+}
+.content > .business{
+	float: left;
+	width: 404px;
+}
+.content > .business > .bsheader > a{
+	float: right;
+	text-decoration: none;
+	color: white;
+	line-height: 30px;
+	vertical-align: middle;
+	font-size: 15px;
+	cursor: pointer;
+}
+.content > .business > .bsheader img{
+    vertical-align: middle;
+    margin-top: -2px;
+}
+.content > .business > .bsheader > span{
+	color: white;
+	line-height: 30px;
+	font-size: 20px;
+	vertical-align: middle;
+}
+.content > .business > ul{
+	margin-top: 10px;
+	float: left;
+}
+.content > .business > ul li{
+	width: 130px;height: 100px;
+	margin: 2px;
+	list-style: none;
+	float: left;
+}
+
+.content > .system{
+	float: left;
+	width: 404px;
+	margin-left: 42px;
+}
+.content > .system > .sysheader > a{
+	float: right;
+	text-decoration: none;
+	color: white;
+	line-height: 30px;
+	vertical-align: middle;
+	font-size: 15px;
+	cursor: pointer;
+}
+.content > .system > .sysheader img{
+    vertical-align: middle;
+    margin-top: -2px;
+}
+.content > .system > .sysheader > span{
+	color: white;
+	line-height: 30px;
+	font-size: 20px;
+	vertical-align: middle;
+}
+.content > .system > ul{
+	margin-top: 10px;
+	float: left;
+}
+.content > .system > ul li{
+	width: 130px;height: 100px;
+	margin: 2px;
+	list-style: none;
+	float: left;
+}
+
+.content > .right{
+	float: right;
+	width: 279px;
+}
+.content > .right > .notice{
+	position: relative;
+}
+.content > .right .ntheader{
+	color: white;
+}
+.content > .right .ntheader > span{
+	font-size: 20px;
+	line-height: 30px;
+	vertical-align: middle;
+}
+.content > .right .ntheader > a{
+	float: right;
+	color: white;
+	font-size: 15px;
+	line-height: 30px;
+	vertical-align: middle;	
+	text-decoration: none;
+}
+.content > .right .ntheader > a:hover{
+	color: lightpink;
+}
+.content > .right .msg{
+	position: relative;
+	padding: 10px;
+}
+.content > .right .shade{
+	position: absolute;
+	left: 0;top: 0;right: 0;bottom: 0;
+	background-color: white;
+	filter: alpha(opacity=20);
+	opacity: .2;
+	z-index: -1;
+}
+.content > .right .msg > ul{
+	margin-left: 20px;
+    color: white;
+    min-height: 204px;
+}
+.content > .right .msg > ul > li{
+	margin-bottom: 5px;
+}
+.content > .right > .download{
+	margin-top: 50px;
+}
+
+.footer {
+	position: absolute;
+	left: 0; right: 0; bottom: 40px;
+}
+.footer p{
+	text-align: center;
+	color: white;
+}
+
+.configing{
+	color: #0dfb84;
+}
+.tools{
+	clear: both;
+    padding: 20px 0;
+    text-align: center;
+    display: none;
+}
+.tools > img{
+	margin-right: 20px;
+}
+.placeHolder div {
+	width: 130px;
+	height: 100px; 
+	border:dashed 1px white;
+}
+
+.delete{
+	display: inline-block;
+	padding: 20px;
+	background: url(./images/delete.png) no-repeat center;
+	border:dashed 1px white; 
+}
+.delete > ul {
+	width: 130px;height: 100px;
+	margin: 0 auto;
+}
+.delete > ul li{
+	list-style: none;
+}
+.add{
+	display: inline-block;
+	padding: 20px;
+	border: 1px dashed white;
+	vertical-align: top;
+}
+.add > a{
+	display: block;
+	width: 130px;height: 66px;
+	margin: 0 auto;
+	background: url(./images/add.png) no-repeat center;
+}
+select{
+	display: block;
+	width: 130px;height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    text-transform: none;
+}
+select:focus{
+	border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+}
