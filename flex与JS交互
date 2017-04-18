@@ -60,3 +60,5 @@ JS:
     }
 </SCRIPT>
 <button onclick="callApp()">Call App</button>
+
+参考地址：http://www.cnblogs.com/tiandi/archive/2012/06/03/2532977.html
