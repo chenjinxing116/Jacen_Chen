@@ -1,0 +1,5 @@
+1创建Map对象；
+2设置地图显示中心点；
+3protoperty继承overlay实例；
+4实现init和draw方法；
+添加覆盖物；
