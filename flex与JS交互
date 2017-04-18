@@ -1,0 +1,62 @@
+1.flex调用js方法
+
+调用方法例如：ExternalInterface.call("UploadComplete",oldName,uidName,_dir+"/"+uidName+type);
+
+第一个是js方法名，后面几个是给这个js方法传的参数。这个方法必须在网页的js中注册，否则会调用失败。
+
+需要注意的是调用之前需要检查网页的js是否已完成加载，用ExternalInterface.available可是判断。
+
+注：这种调用方法是可以有返回值的，例如：var m:String = ExternalInterface.call(f,"New Title");
+
+
+      但是这个返回值不能有时延（例如js需要进行ajax操作），否则m=null。因为flex是异步的。
+      <mx:Script>
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml">
+    <mx:Script>
+        import flash.external.*;
+    
+        public function callWrapper():void {
+            var f:String = "changeDocumentTitle";
+            var m:String = ExternalInterface.call(f,"New Title");
+            trace(m);
+        }
+    </mx:Script>
+    <mx:Button label="Change Document Title" click="callWrapper()"/>
+</mx:Application>
+Html页面中有如下函数定义：
+<SCRIPT LANGUAGE="JavaScript">
+    function changeDocumentTitle(a) {
+        window.document.title=a;
+        return "successful";
+    }
+</SCRIPT>
+2.js调用flex方法 
+
+js要调用flex方法，首先在flex中必须注册，将as方法注册为js可调用的方法。例如：ExternalInterface.addCallback("ConfirmGroup",ConfirmGroup);
+
+第一个是js中调用时用的名称，第二个是as中定义的方法。
+
+在ie浏览器中调用方法为： document.getElementById("mapContent").ConfirmGroup(1); 
+
+mapContent为flash的id。
+
+ 注：它也是可以有返回值的。
+ AS:
+ <mx:Script>
+    import flash.external.*;
+    public function myFunc():Number {
+        return 42;
+    }
+    public function initApp():void {
+        ExternalInterface.addCallback("myFlexFunction",myFunc);
+    }
+</mx:Script>
+JS:
+<SCRIPT language='JavaScript' charset='utf-8'>
+    function callApp() {
+        var x = MyFlexApp.myFlexFunction();
+        alert(x);
+    }
+</SCRIPT>
+<button onclick="callApp()">Call App</button>
