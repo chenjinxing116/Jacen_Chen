@@ -1,0 +1,11 @@
+swfobject.embedSWF(swfUrl, id, width, height, version, expressInstallSwfurl, flashvars, params, attributes)
+有5个必须的参数和4个可选的参数：
+1. swfUrl（String，必须的）指定SWF的URL。
+2. id（String，必须的）指定将会被Flash内容替换的HTML元素（包含你的替换内容）的id。
+3. width（String，必须的）指定SWF的宽。
+4. height（String，必须的）指定SWF的高。
+5. version（String，必须的）指定你发布的SWF对应的Flash Player版本（格式为：major.minor.release）
+6. expressInstallSwfurl（String，可选的）指定express install SWF的URL并激活Adobe express install 。
+7. flashvars（String，可选的）用name:value对指定你的flashvars。
+8. params（String，可选的）用name:value对指定你的嵌套object元素的params。
+9. attributes（String，可选的）用name:value对指定object的属性。
