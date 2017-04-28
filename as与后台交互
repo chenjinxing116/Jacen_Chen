@@ -1,0 +1,78 @@
+学习参考地址：http://www.cnblogs.com/java-class/archive/2015/03/27/4371641.html
+package project.test {    
+    import flash.display.*;    
+    import flash.events.*;    
+    import flash.net.*;     
+   
+    public class TestURLLoader extends Sprite {    
+        private var _loader:URLLoader;    
+        public function TestURLLoader() {    
+            //创建URLLoader对象;    
+            _loader = new URLLoader();    
+            //设置接收数据方式(文本、原始二进制数据、URL 编码变量);    
+            _loader.dataFormat = URLLoaderDataFormat.VARIABLES;    
+                
+            //设置事件侦听器    
+            configureListeners(_loader);    
+                
+            //设置传递参数;    
+            var params:URLVariables = new URLVariables();    
+            params.username = "kinglong";    
+            params.password = "king";    
+                
+            //建立Request访问对象;    
+            var request:URLRequest = new URLRequest("http://www.klstudio.com/none.jsp");    
+            //设置参数;    
+            request.data = params;              
+            //设置访问模式(POST,GET);    
+            request.method = URLRequestMethod.POST;             
+                
+            try {    
+                loader.load(request);    
+            } catch (error:Error) {    
+                trace(error);    
+            }    
+   
+                
+        }    
+        private function configureListeners(dispatcher:IEventDispatcher):void {    
+            //加载完成事件;    
+            dispatcher.addEventListener(Event.COMPLETE, loaderHandler);    
+            //开始访问事件;    
+            dispatcher.addEventListener(Event.OPEN, loaderHandler);    
+            //加载进度事件;    
+            dispatcher.addEventListener(ProgressEvent.PROGRESS, loaderHandler);    
+            //跨域访问安全策略事件;    
+            dispatcher.addEventListener(SecurityErrorEvent.SECURITY_ERROR, loaderHandler);    
+            //Http状态事件;    
+            dispatcher.addEventListener(HTTPStatusEvent.HTTP_STATUS, loaderHandler);    
+            //访问出错事件;    
+            dispatcher.addEventListener(IOErrorEvent.IO_ERROR, loaderHandler);    
+        }    
+            
+        private function loaderHandler(event:*):void {    
+            switch(event.type) {    
+                case Event.COMPLETE:    
+                    trace(_loader.data.result);    
+                    break;    
+                case Event.OPEN:    
+                    trace("open: " + event);    
+                    break;    
+                case ProgressEvent.PROGRESS:    
+                    trace("progress: " + event);    
+                    break;    
+                case SecurityErrorEvent.SECURITY_ERROR:    
+                    trace("securityError: " + event);    
+                    break;    
+                case HTTPStatusEvent.HTTP_STATUS:    
+                    trace("httpStatus: " + event);    
+                    break;    
+                case IOErrorEvent.IO_ERROR:    
+                    trace("ioError: " + event);    
+                    break;    
+                    
+            }    
+        }          
+   
+    }       
+}   
