@@ -1,0 +1,79 @@
+function getEndTime() {
+    return new Date().Format("yyyy-MM-dd");
+}
+
+function getStartTime(index) { //index 为天数
+    var s = new Date().Format("yyyy-MM-dd");
+    var dt = new Date(s.replace(/-/, "/"));
+    var endTime = dt.getTime() - 1000 * 60 * 60 * 24 * index;
+    return new Date(endTime).Format("yyyy-MM-dd");
+}
+
+/*获取当前时间的前三个月*/
+function getLastThreeMonth() {
+	var now = new Date();
+	var lastYear = now.getMonth()-3;
+	now.setMonth(lastYear);
+    return now.Format("yyyy-MM-dd");
+}
+//获得上周的开始日期
+function getLastWeekStartTime(){
+	var now = new Date();                    //当前日期
+    var nowDayOfWeek = now.getDay()-1;         //今天本周的第几天
+    var nowDay = now.getDate();              //当前日
+    var nowMonth = now.getMonth();           //当前月
+    var nowYear = now.getFullYear();             //当前年
+   //获得上周的开始日期
+    var getUpWeekStartDate = new Date(nowYear, nowMonth, nowDay - nowDayOfWeek -7);
+    return getUpWeekStartDate.Format("yyyy-MM-dd");
+}
+//获得上周的结束日期
+function getLastWeekEndTime(){
+	var now = new Date();                    //当前日期
+    var nowDayOfWeek = now.getDay()-1;         //今天本周的第几天
+    var nowDay = now.getDate();              //当前日
+    var nowMonth = now.getMonth();           //当前月
+    var nowYear = now.getFullYear();             //当前年
+
+    //获得上周的结束日期
+    var getUpWeekEndDate = new Date(nowYear, nowMonth, nowDay + (6 - nowDayOfWeek - 7));
+    return getUpWeekEndDate.Format("yyyy-MM-dd");
+}
+
+//获得上月开始时间   
+function getLastMonthStartDate() {
+	var now = new Date(); //当前日期   
+	var lastMonthYear =  new Date(now.setMonth((new Date().getMonth()-1))).getFullYear();    
+	
+	var lastMonthDate = new Date(); //上月日期   
+	lastMonthDate.setDate(1);   
+	lastMonthDate.setMonth(lastMonthDate.getMonth() - 1);   
+	var lastYear = lastMonthDate.getYear();   
+	var lastMonth = lastMonthDate.getMonth();   
+	
+    var lastMonthStartDate = new Date(lastMonthYear, lastMonth, 1);   
+    return lastMonthStartDate.Format("yyyy-MM-dd");  
+}   
+//获得上月结束时间   
+function getLastMonthEndDate() {
+	var now = new Date(); //当前日期   
+	var lastMonthYear =  new Date(now.setMonth((new Date().getMonth()-1))).getFullYear();  
+	
+	var lastMonthDate = new Date(); //上月日期   
+	lastMonthDate.setDate(1);   
+	lastMonthDate.setMonth(lastMonthDate.getMonth() - 1);   
+	var lastYear = lastMonthDate.getYear();   
+	var lastMonth = lastMonthDate.getMonth();   
+	
+    var lastMonthEndDate = new Date(lastMonthYear, lastMonth, getMonthDays(lastMonth));   
+    return lastMonthEndDate.Format("yyyy-MM-dd");   
+} 
+//获得某月的天数   
+function getMonthDays(myMonth) {   
+	var now = new Date(); //当前日期   
+	var nowYear = now.getFullYear(); //当前年   
+    var monthStartDate = new Date(nowYear, myMonth, 1);   
+    var monthEndDate = new Date(nowYear, myMonth + 1, 1);   
+    var days = (monthEndDate - monthStartDate) / (1000 * 60 * 60 * 24);   
+    return days;   
+}   
