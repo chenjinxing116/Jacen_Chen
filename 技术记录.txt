@@ -2,3 +2,35 @@ vue项目 packgae.json 一般用来存放依赖文件 和配置  （）入口好像在app.js）
 git 自身用到私钥，对外提供公钥
 
 微信小程序 上官网下载 开发工具 ，搜微信小程序demo即可进行开发（粗略浏览官网教程）
+
+长话短说，现在js都不是引入的那种方式了，而是package.json里边管理了，然后webpack辅助babel转换，内部服务器，然后前端预览开发。
+
+技术网站：
+	
+https://element-cn.eleme.io/#/zh-CN 
+
+ElementUI
+https://didi.github.io/cube-ui/#/zh-CN/example 
+
+滴滴Web 移动端组件库cube-ui
+https://github.com/airyland/vux 
+
+Mobile UI Components based on Vue & WeUI
+https://github.com/aidenZou/vue-weui 
+
+针对 Vue 框架移植的 We UI 框架的适配
+https://github.com/tianyong90/we-vue 
+
+使用 Vue2.x + weui1.x 开发的组件
+https://jaweii.github.io/Vue-Layout/dist/#/ 
+
+Vue-Layout - 可视化布局
+https://mint-ui.github.io/#!/zh-cn 
+
+基于 Vue.js 的移动端组件库
+https://youzan.github.io/vant/#/zh-CN/intro 
+
+有赞-vant
+https://mand-mobile.github.io/2x-doc/#/zh-CN/docs/introduce 
+
+面向金融场景的Vue移动端UI组件库
