@@ -58,7 +58,7 @@
 		<!-- lib versions -->
 		<junit.version>4.11</junit.version>
 		<mysql.connector.version>5.1.30</mysql.connector.version>
-		<org.springframework.version>4.1.4.RELEASE</org.springframework.version>
+		<org.springframework.version>6.0.0</org.springframework.version>
 		<org.springframework.data.version>1.7.2.RELEASE</org.springframework.data.version>
 		<org.hibernate>4.3.7.Final</org.hibernate>
 		<org.quartz.version>2.2.1</org.quartz.version>
